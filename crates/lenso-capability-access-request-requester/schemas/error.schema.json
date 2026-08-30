@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    { "const": "unauthenticated" }, { "const": "forbidden" }, { "const": "invalid_request" },
+    { "const": "organization_not_found" }, { "const": "request_not_found" },
+    { "const": "bundle_not_requestable" }, { "const": "scope_not_requestable" }, { "const": "access_already_granted" },
+    { "const": "active_request_conflict" }, { "const": "revision_conflict" },
+    { "const": "idempotency_conflict" }, { "const": "invalid_transition" }, { "const": "request_expired" }
+  ]
+}

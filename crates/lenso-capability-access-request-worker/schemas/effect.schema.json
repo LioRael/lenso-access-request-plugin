@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "type": "object", "additionalProperties": false,
+  "required": ["effect_id", "request_id", "sequence", "kind", "status", "revision", "attempts", "automatic_retry_allowed", "error_code", "policy_revision", "evidence_reference", "lease_until", "created_at", "updated_at"],
+  "properties": {
+    "effect_id": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "request_id": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "sequence": { "type": "integer", "minimum": 1, "maximum": 8 },
+    "kind": { "type": "string", "enum": ["create_role", "set_role_permissions", "assign_role"] },
+    "status": { "type": "string", "enum": ["pending", "leased", "succeeded", "failed", "unknown"] },
+    "revision": { "type": "string", "pattern": "^[1-9][0-9]*$" },
+    "attempts": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "automatic_retry_allowed": { "type": "boolean" },
+    "error_code": { "type": ["string", "null"], "maxLength": 160 },
+    "policy_revision": { "type": ["string", "null"], "maxLength": 160 },
+    "evidence_reference": { "type": ["string", "null"], "maxLength": 1000 },
+    "lease_until": { "type": ["string", "null"], "format": "date-time" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" }
+  }
+}

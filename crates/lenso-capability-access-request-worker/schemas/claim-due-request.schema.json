@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "type": "object", "additionalProperties": false,
+  "required": ["worker_id", "lease_seconds", "idempotency_key"], "properties": {
+    "worker_id": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "lease_seconds": { "type": "integer", "minimum": 15, "maximum": 900 },
+    "idempotency_key": { "type": "string", "minLength": 1, "maxLength": 200 }
+  }
+}

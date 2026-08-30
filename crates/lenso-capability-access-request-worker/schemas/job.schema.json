@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "type": "object", "additionalProperties": false,
+  "required": ["job_id", "request_id", "organization_id", "kind", "fence", "lease_token", "lease_until"],
+  "properties": {
+    "job_id": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "request_id": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "organization_id": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "kind": { "type": "string", "enum": ["access_effect", "notification"] },
+    "fence": { "type": "string", "pattern": "^[1-9][0-9]*$" },
+    "lease_token": { "type": "string", "minLength": 1, "maxLength": 160, "x-lenso-sensitive": true },
+    "lease_until": { "type": "string", "format": "date-time" }
+  }
+}
