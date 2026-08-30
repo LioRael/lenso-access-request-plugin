@@ -1,0 +1,4 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "type": "object", "additionalProperties": false,
+  "required": ["job"], "properties": { "job": { "oneOf": [{ "$ref": "job.schema.json" }, { "type": "null" }] } }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "type": "object", "additionalProperties": false,
+  "required": ["organization_id", "request_id", "effect_id"], "properties": {
+    "organization_id": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "request_id": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "effect_id": { "type": "string", "minLength": 1, "maxLength": 160 }
+  }
+}

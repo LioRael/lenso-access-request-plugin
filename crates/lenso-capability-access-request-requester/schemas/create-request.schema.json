@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["organization_id", "bundle_id", "scope", "reason", "expires_at", "recipient", "idempotency_key"],
+  "properties": {
+    "organization_id": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "bundle_id": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "id", "display_name"],
+      "properties": {
+        "kind": { "type": "string", "minLength": 1, "maxLength": 160 },
+        "id": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "display_name": { "type": ["string", "null"], "maxLength": 240 }
+      }
+    },
+    "reason": { "type": "string", "minLength": 1, "maxLength": 2000, "x-lenso-sensitive": true },
+    "expires_at": { "type": "string", "format": "date-time" },
+    "recipient": {
+      "type": "object", "additionalProperties": false,
+      "required": ["address", "display_name", "locale"],
+      "properties": {
+        "address": { "type": "string", "minLength": 3, "maxLength": 320, "x-lenso-sensitive": true },
+        "display_name": { "type": ["string", "null"], "maxLength": 240, "x-lenso-sensitive": true },
+        "locale": { "type": "string", "enum": ["en", "en-US"] }
+      }
+    },
+    "idempotency_key": { "type": "string", "minLength": 1, "maxLength": 200 }
+  }
+}

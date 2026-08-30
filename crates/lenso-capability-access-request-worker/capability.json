@@ -1,0 +1,12 @@
+{
+  "id": "lenso.access-request.worker@1",
+  "version": "1.0.0",
+  "portable": true,
+  "cross_lane_transfer": true,
+  "operations": [
+    { "name": "claim_due", "interaction": "request", "request_schema": "schemas/claim-due-request.schema.json", "response_schema": "schemas/claim-due-response.schema.json", "domain_error_schema": "schemas/error.schema.json" },
+    { "name": "process", "interaction": "request", "request_schema": "schemas/process-request.schema.json", "response_schema": "schemas/process-response.schema.json", "domain_error_schema": "schemas/error.schema.json" },
+    { "name": "expire", "interaction": "request", "request_schema": "schemas/expire-request.schema.json", "response_schema": "schemas/process-response.schema.json", "domain_error_schema": "schemas/error.schema.json" },
+    { "name": "retry", "interaction": "request", "request_schema": "schemas/retry-request.schema.json", "response_schema": "schemas/effect.schema.json", "domain_error_schema": "schemas/error.schema.json" }
+  ]
+}

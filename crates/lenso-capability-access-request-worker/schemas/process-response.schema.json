@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "type": "object", "additionalProperties": false,
+  "required": ["request_id", "request_status", "request_revision", "job_status", "automatic_retry_allowed"],
+  "properties": {
+    "request_id": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "request_status": { "type": "string", "enum": ["pending", "provisioning", "approved", "denied", "cancelled", "expired", "intervention_required"] },
+    "request_revision": { "type": "string", "pattern": "^[1-9][0-9]*$" },
+    "job_status": { "type": "string", "enum": ["succeeded", "failed", "unknown", "expired"] },
+    "automatic_retry_allowed": { "type": "boolean" }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "type": "object", "additionalProperties": false,
+  "required": ["request_id", "organization_id", "requester_subject", "requester_was_member", "bundle_id", "role", "scope", "permissions", "reason", "status", "effect_status", "revision", "expires_at", "created_at", "updated_at", "decided_by", "decision_note"],
+  "properties": {
+    "request_id": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "organization_id": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "requester_subject": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "requester_was_member": { "type": "boolean" },
+    "bundle_id": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "role": { "type": "object", "additionalProperties": false, "required": ["mode", "role_id", "display_name"], "properties": {
+      "mode": { "type": "string", "enum": ["existing", "managed"] },
+      "role_id": { "type": "string", "minLength": 1, "maxLength": 160 },
+      "display_name": { "type": "string", "minLength": 1, "maxLength": 160 }
+    } },
+    "scope": { "type": "object", "additionalProperties": false, "required": ["kind", "id", "display_name"], "properties": {
+      "kind": { "type": "string", "minLength": 1, "maxLength": 160 },
+      "id": { "type": "string", "minLength": 1, "maxLength": 240 },
+      "display_name": { "type": ["string", "null"], "maxLength": 240 }
+    } },
+    "permissions": { "type": "array", "minItems": 1, "maxItems": 64, "uniqueItems": true, "items": { "type": "string", "minLength": 1, "maxLength": 160 } },
+    "reason": { "type": "string", "minLength": 1, "maxLength": 2000, "x-lenso-sensitive": true },
+    "status": { "type": "string", "enum": ["pending", "provisioning", "approved", "denied", "cancelled", "expired", "intervention_required"] },
+    "effect_status": { "type": "string", "enum": ["none", "pending", "leased", "succeeded", "failed", "unknown"] },
+    "revision": { "type": "string", "pattern": "^[1-9][0-9]*$" },
+    "expires_at": { "type": "string", "format": "date-time" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "decided_by": { "type": ["string", "null"], "maxLength": 240 },
+    "decision_note": { "type": ["string", "null"], "maxLength": 2000, "x-lenso-sensitive": true }
+  }
+}

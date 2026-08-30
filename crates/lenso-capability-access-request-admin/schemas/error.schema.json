@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "oneOf": [
+    { "const": "unauthenticated" }, { "const": "forbidden" }, { "const": "invalid_request" },
+    { "const": "organization_not_found" }, { "const": "membership_required" }, { "const": "access_denied" },
+    { "const": "request_not_found" }, { "const": "effect_not_found" }, { "const": "revision_conflict" },
+    { "const": "idempotency_conflict" }, { "const": "invalid_transition" }, { "const": "request_expired" },
+    { "const": "self_approval" }, { "const": "target_policy_conflict" }, { "const": "operation_in_progress" },
+    { "const": "effect_not_uncertain" }
+  ]
+}
