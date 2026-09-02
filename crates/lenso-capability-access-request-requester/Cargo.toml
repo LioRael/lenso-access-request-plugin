@@ -21,8 +21,5 @@ lenso-plugin-authoring.workspace = true
 serde.workspace = true
 serde_json.workspace = true
 
-[build-dependencies]
-lenso-contract-codegen.workspace = true
-
 [lints]
 workspace = true
