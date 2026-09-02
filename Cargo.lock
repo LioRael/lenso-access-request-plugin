@@ -802,7 +802,6 @@ name = "lenso-capability-access-request-admin"
 version = "0.1.0"
 dependencies = [
  "futures",
- "lenso-contract-codegen",
  "lenso-contract-runtime",
  "lenso-kernel",
  "lenso-plugin-authoring",
@@ -815,7 +814,6 @@ name = "lenso-capability-access-request-requester"
 version = "0.1.0"
 dependencies = [
  "futures",
- "lenso-contract-codegen",
  "lenso-contract-runtime",
  "lenso-kernel",
  "lenso-plugin-authoring",
@@ -828,7 +826,6 @@ name = "lenso-capability-access-request-worker"
 version = "0.1.0"
 dependencies = [
  "futures",
- "lenso-contract-codegen",
  "lenso-contract-runtime",
  "lenso-kernel",
  "lenso-plugin-authoring",
