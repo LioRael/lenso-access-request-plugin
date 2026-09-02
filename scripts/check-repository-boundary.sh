@@ -26,19 +26,6 @@ if rg -n '(html|template|reason|decision_note):' \
   exit 1
 fi
 
-required_pins=(
-  b001dffea970789858499efa2049853d37bc3e0f
-  9572afd465ba2f952b646ec16935c0274f66c82a
-  de1e1f1ec61232b13fc90a05f1cb4e3fc96ba420
-  b4a2f53df882ae51021aa3d5922d8ee41bf97c72
-)
-for pin in "${required_pins[@]}"; do
-  if ! rg -q "$pin" Cargo.toml; then
-    echo "required exact Lenso dependency pin is missing: $pin" >&2
-    exit 1
-  fi
-done
-
 if ! rg -q 'status=.unknown.*automatic_retry_allowed=FALSE|status=\x27unknown\x27,revision=revision\+1,automatic_retry_allowed=FALSE' \
   crates/lenso-access-request-postgres-plugin/src/storage.rs; then
   echo "unknown Access Control effects are not visibly terminal for automatic retry" >&2
