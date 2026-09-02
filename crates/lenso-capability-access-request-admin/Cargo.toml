@@ -1,6 +1,6 @@
 [package]
 name = "lenso-capability-access-request-admin"
-version = "0.1.0"
+version = "0.1.1"
 description = "Administrator contract for organization access request decisions and effect recovery."
 edition.workspace = true
 license.workspace = true

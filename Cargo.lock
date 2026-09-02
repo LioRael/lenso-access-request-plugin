@@ -718,7 +718,7 @@ dependencies = [
 
 [[package]]
 name = "lenso-access-request-postgres-plugin"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "lenso",
  "lenso-app-plan",
@@ -805,7 +805,7 @@ dependencies = [
 
 [[package]]
 name = "lenso-capability-access-request-admin"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "futures",
  "lenso-contract-runtime",
@@ -817,7 +817,7 @@ dependencies = [
 
 [[package]]
 name = "lenso-capability-access-request-requester"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "futures",
  "lenso-contract-runtime",
@@ -829,7 +829,7 @@ dependencies = [
 
 [[package]]
 name = "lenso-capability-access-request-worker"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "futures",
  "lenso-contract-runtime",

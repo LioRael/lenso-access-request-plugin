@@ -1,6 +1,6 @@
 [package]
 name = "lenso-access-request-postgres-plugin"
-version = "0.1.0"
+version = "0.1.1"
 description = "PostgreSQL-backed organization Access Request workflow Plugin for Lenso applications."
 edition.workspace = true
 license.workspace = true
@@ -21,9 +21,9 @@ lenso.workspace = true
 lenso-auth-sdk.workspace = true
 lenso-capability-access-control.workspace = true
 lenso-capability-access-control-admin.workspace = true
-lenso-capability-access-request-requester = { version = "0.1.0", path = "../lenso-capability-access-request-requester" }
-lenso-capability-access-request-admin = { version = "0.1.0", path = "../lenso-capability-access-request-admin" }
-lenso-capability-access-request-worker = { version = "0.1.0", path = "../lenso-capability-access-request-worker" }
+lenso-capability-access-request-requester = { version = "0.1.1", path = "../lenso-capability-access-request-requester" }
+lenso-capability-access-request-admin = { version = "0.1.1", path = "../lenso-capability-access-request-admin" }
+lenso-capability-access-request-worker = { version = "0.1.1", path = "../lenso-capability-access-request-worker" }
 lenso-capability-notification-transactional.workspace = true
 lenso-capability-organization-directory.workspace = true
 lenso-capability-organization-membership.workspace = true
