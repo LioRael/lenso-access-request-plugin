@@ -26,6 +26,10 @@ if rg -n '(html|template|reason|decision_note):' \
   exit 1
 fi
 
+test -f crates/lenso-access-request-requester-agent-tools-plugin/src/lib.rs
+test -f crates/lenso-access-request-admin-agent-tools-plugin/src/lib.rs
+rg -q 'lenso-capability-agent-tool-provider' Cargo.toml
+
 if ! rg -q 'status=.unknown.*automatic_retry_allowed=FALSE|status=\x27unknown\x27,revision=revision\+1,automatic_retry_allowed=FALSE' \
   crates/lenso-access-request-postgres-plugin/src/storage.rs; then
   echo "unknown Access Control effects are not visibly terminal for automatic retry" >&2
