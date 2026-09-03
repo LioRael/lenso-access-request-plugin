@@ -1,6 +1,6 @@
 [package]
 name = "lenso-capability-access-request-worker"
-version = "0.1.0"
+version = "0.1.1"
 description = "Worker contract for leased access request effects, expiry, and retry."
 edition.workspace = true
 license.workspace = true

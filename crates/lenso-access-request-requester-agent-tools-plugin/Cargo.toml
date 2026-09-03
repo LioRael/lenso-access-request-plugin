@@ -14,7 +14,7 @@ root-slot = "tool-providers"
 [dependencies]
 futures.workspace = true
 lenso.workspace = true
-lenso-capability-access-request-requester = { path = "../lenso-capability-access-request-requester", version = "0.1.0" }
+lenso-capability-access-request-requester = { path = "../lenso-capability-access-request-requester", version = "0.1.1" }
 lenso-capability-agent-tool-provider.workspace = true
 lenso-kernel.workspace = true
 serde.workspace = true
