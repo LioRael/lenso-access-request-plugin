@@ -35,6 +35,16 @@ metadata="$($cargo_bin metadata --no-deps --format-version=1)"
 target_directory="$(jq -r '.target_directory' <<<"$metadata")"
 plugin_version="$(jq -r '.packages[] | select(.name == "lenso-access-request-postgres-plugin") | .version' <<<"$metadata")"
 
+for adapter in \
+  lenso-access-request-requester-agent-tools-plugin \
+  lenso-access-request-admin-agent-tools-plugin; do
+  publish="$(jq -r --arg adapter "$adapter" '.packages[] | select(.name == $adapter) | .publish | length' <<<"$metadata")"
+  if [[ "$publish" != "0" ]]; then
+    printf '%s must remain private\n' "$adapter" >&2
+    exit 1
+  fi
+done
+
 source_patches=()
 for capability in "${capabilities[@]}"; do
   source_patches+=(--config "patch.crates-io.${capability}.path=\"${repository_root}/crates/${capability}\"")

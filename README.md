@@ -18,6 +18,18 @@ The implementation Plugin is `lenso.access-request.postgres`, with root slot
 `access-requests`. All three contracts are portable and use checked generated
 Rust projections.
 
+Two private linked Agent Tool adapters preserve the requester/reviewer
+authority split:
+
+- `lenso.access-request.requester.agent-tools` exposes requester create, get,
+  list, and cancel operations;
+- `lenso.access-request.admin.agent-tools` exposes reviewer get, list, approve,
+  deny, and effect inspection operations.
+
+Neither adapter exposes the Worker contract. `resolve_effect` also remains
+outside the conversational Tool surface because it records an operator's
+external evidence about an uncertain Access Control outcome.
+
 ## Configuration
 
 ```json

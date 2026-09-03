@@ -4,6 +4,8 @@ members = [
     "crates/lenso-capability-access-request-requester",
     "crates/lenso-capability-access-request-admin",
     "crates/lenso-capability-access-request-worker",
+    "crates/lenso-access-request-requester-agent-tools-plugin",
+    "crates/lenso-access-request-admin-agent-tools-plugin",
     "crates/lenso-access-request-postgres-plugin",
 ]
 
@@ -18,6 +20,7 @@ rust-version = "1.94"
 futures = "0.3"
 lenso = "0.5.0"
 lenso-app-plan = "0.3.0"
+lenso-capability-agent-tool-provider = "0.1.0"
 lenso-auth-sdk = "0.2.1"
 lenso-capability-access-control = "0.1.0"
 lenso-capability-access-control-admin = "0.1.0"

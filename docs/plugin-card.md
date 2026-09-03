@@ -36,3 +36,15 @@ Business decisions commit independently of Notification acceptance. Access
 Control runtime/unknown outcomes and expired post-dispatch leases become
 terminal `unknown` effects and require `inspect_effect` plus `resolve_effect`.
 No automatic replay crosses that boundary.
+
+## Agent Tool adapters
+
+The separate requester and administrator Agent Tool adapters each require
+exactly one matching business Capability and provide
+`lenso.agent.tool-provider@2`. They own no workflow state or authorization
+policy. Removing either adapter removes only that Agent catalog surface.
+
+The requester adapter exposes all four requester operations. The administrator
+adapter exposes reviewer reads, approve/deny, and effect inspection. It omits
+`resolve_effect`, whose external-evidence assertion belongs to an operator
+surface, and omits the entire Worker Capability.
